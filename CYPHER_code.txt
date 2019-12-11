@@ -1,0 +1,187 @@
+﻿CREATE (c1:Consumer {name:'Andy', age: 36,email:'andy@gmail.com', area_interest: 'Seoul, jongro'}),
+	(c2:Consumer {name:'Bathy',age:25,email:'bathy@gmail.com', area_interest: 'Seoul, gangnam'}), 
+	(c3:Consumer {name:'Timothy', age:25,email:'timothy@gmail.com',area_interest: 'Ulsan, namgu'}),
+	(c4:Consumer {name:'Franky', age:20,email:'franky@gmail.com',area_interest: 'Seoul, jongro'}),
+	(c5:Consumer {name:'Fivo', age:36,email:'fivo@gmail.com',area_interest: 'Ulsan, namgu'}),
+	(c6:Consumer {name:'Silky', age:46,email:'silky@gmail.com',area_interest: 'Daejeon, jungu'}),
+	(c7:Consumer {name:'Sevno', age: 43,email:'sevno@gmail.com',area_interest: 'Daejeon'}),
+	(c8:Consumer {name:'Eighto', age:20,email:'eighto@gmail.com',area_interest: 'Ulsan, namgu'}),
+	(c9:Consumer {name:'Nino', age:31,email:'nino@gmail.com',area_interest: 'Daejeon, jungu'}),
+	(c10:Consumer {name:'Tency', age: 21,email:'tency@gmail.com',area_interest: 'Seoul'}),
+	(c11:Consumer {name:'Elena', age:22,email:'elena@gmail.com',area_interest: 'Seoul'}),
+	(c12:Consumer {name:'Twelsh', age:56,email:'twelsh@gmail.com',area_interest: 'Daejeon'}),
+	(c13:Consumer {name:'Thiso', age: 23,email:'thiso@gmail.com',area_interest: 'Ulsan'})
+	
+CREATE (p1:Product {address:'Seoul, jongro 125-1',floor:3, size:23, type: 'one room', parking:'available',elevator:'inavailable', duration: '6months', PriceMonth:50}),
+	(p2:Product {address:'Seoul, gangnam 3 district',floor:10, size:18,type:'one room', parking: 'available', elevator: 'available', duration:'1month',PriceMonth:70}),
+	(p3:Product {address:'Ulsan, namgu 1',floor:5, size:85,type:'apartment', parking: 'available', elevator: 'available', duration: '2years',PriceMonth:120}),
+	(p4:Product {address:'Daejeon, jungu 10',floor:4, size:35,type:'two room', parking: 'available', elevator: 'available', duration: '1year',PriceMonth:50}),
+	(p5:Product {address:'Seoul, jongro 120-3. 201',floor:4, size:40,type:'two room', parking: 'available', elevator: 'inavailable', duration:'1year',PriceMonth:80}),
+	(p6:Product {address:'Seoul, jongro 2gagil 3',floor:1, size:15,type:'one room', parking: 'inavailable', elevator: 'inavailable',duration:'2months',PriceMonth:35}),
+	(p7:Product {address:'Seoul, gangnam 5 district',floor:8, size:30,type:'two room', parking: 'available', elevator: 'available', duration: '1month',PriceMonth:80}),
+	(p8:Product {address:'Seoul, jongro sungkyunkwanro 10',floor:4, size:25,type:'one room', parking: 'inavailable', elevator: 		'inavailable',duration:'6months',PriceMonth:55}),
+	(p9:Product {address:'Seoul, gangnam daebyeonro 22gil',floor:10, size:60,type:'two room', parking: 'available', elevator: 'available', duration: '1year',PriceMonth:150}),
+	(p10:Product {address:'Seoul, jongro 2gagil 3',floor:1, size:15,type:'one room', parking: 'inavailable', elevator: 'inavailable',duration:'2months',PriceMonth:35}),
+	(p11:Product {address:'Ulsan, namgu okdong 2gagil',floor:5, size:90,type:'apartment', parking: 'available', elevator: 'available', duration: '1year',PriceMonth:100}),
+	(p12:Product {address:'Ulsan, jungu munsuro 34',floor:15, size:25,type:'one room', parking: 'available', elevator: 'available',duration:'6months',PriceMonth:50}),
+	(p13:Product {address:'Daejeon, namgu 12ga 35',floor:10, size:40,type:'two room', parking: 'available', elevator: 'available', duration: '6months',PriceMonth:50}),
+	(p14:Product {address:'Seoul, gangnam sinnonhyun 12-2, 1803',floor:18, size:36,type:'one room', parking: 'available', elevator: 'available', duration: 			'1year',PriceMonth:80}),
+	(p15:Product {address:'Seoul, jongro hyehwadong daehakro 10-2, 302',floor:3, size:21,type:'one room', parking: 'inavailable', elevator: 					'inavailable',duration:'1year',PriceMonth:55}),
+	(p16:Product {address:'Ulsan, bukgu 23-202',floor:2, size:45,type:'one room', parking: 'available', elevator: 'inavailable', duration: '1year',PriceMonth:40}),
+	(p17:Product {address:'Ulsan, uljugun ungchonri 10-9',floor:1, size:120,type:'two room', parking: 'available', elevator: 'inavailable',duration:'1year',PriceMonth:200}),
+	(p18:Product {address:'Daejeon, namgu 14-6, 303',floor:3, size:50,type:'two room', parking: 'available', elevator: 'available', duration: '6months',PriceMonth:60})
+
+CREATE (c1)-[:CONTRACTED]->(p1),
+	(c2)-[:INTERESTED_IN]->(p2),
+	(c3)-[:INTERESTED_IN]->(p3),
+	(c4)-[:INTERESTED_IN]->(p1),
+	(c5)-[:INTERESTED_IN]->(p1),
+	(c6)-[:INTERESTED_IN]->(p4),
+	(c4)-[:INTERESTED_IN]->(p5),
+	(c1)-[:INTERESTED_IN]->(p15),
+	(c4)-[:INTERESTED_IN]->(p15),
+	(c10)-[:INTERESTED_IN]->(p10),
+	(c11)-[:CONTRACTED]->(p8),
+	(c4)-[:INTERESTED_IN]->(p6),
+	(c10)-[:INTERESTED_IN]->(p6),
+	(c8)-[:INTERESTED_IN]->(p11),
+	(c10)-[:INTERESTED_IN]->(p9),
+	(c11)-[:INTERESTED_IN]->(p9),
+	(c3)-[:CONTRACTED]->(p8),
+	(c5)-[:INTERESTED_IN]->(p17),
+	(c8)-[:INTERESTED_IN]->(p16),
+	(c13)-[:INTERESTED_IN]->(p12),
+	(c6)-[:CONTRACTED]->(p4),
+	(c7)-[:INTERESTED_IN]->(p13),
+	(c9)-[:INTERESTED_IN]->(p13),
+	(c12)-[:INTERESTED_IN]->(p18)
+
+
+CREATE (b1:Broker {name: 'Authobak' , phone:'010-9999-8989',credit: 'A', email: 'authobak@gmail.com', address: 'Seoul, jongro 1-23', product_num: 23, established_year: 2011}),
+	(b2:Broker {name: 'Beesa' , phone:'010-8888-0001',credit: 'B',email:'beesa@gmail.com', address: 'Seoul, gangnam 3-21', product_num: 5, established_year: 2017}),
+	(b3:Broker {name: 'Circa' , phone:'010-7878-0909',credit: 'B', email: 'circa@gmail.com', address: 'Ulsan, namgu 3-23', product_num: 63, established_year: 2001}),
+	(b4:Broker {name: 'Debora' , phone:'010-8978-9989',credit: 'A+', email: 'Debora@gmail.com', address: 'Daejeon, jungu 1-2', product_num: 54, established_year: 2005}),
+	(b5:Broker {name: 'Ellesa' , phone:'010-5765-9987',credit: 'A', email: 'Ellesa@gmail.com', address: 'Ulsan, namgu 3-23', product_num: 63, established_year: 2001})
+	
+CREATE (o1:Owner {name: 'Omartins' , credit: 'A', email: 'omartins@gmail.com'}),
+	(o2:Owner {name: 'Yogerato' , credit: 'A+', email:'yogerato@gmail.com'}),
+	(o3:Owner {name: 'Zuth' , credit: 'A', email: 'zuth@gmail.com'}),
+	(o4:Owner {name: 'April' , credit: 'A', email: 'april@gmail.com'}),
+	(o5:Owner {name: 'Beesto' , credit: 'B+', email: 'beesto@gmail.com'})
+
+CREATE (b1)-[:SOLD]->(p1), 
+	(b2)-[:HAVE]->(p2),
+	(b3)-[:HAVE]->(p3), 
+	(b4)-[:SOLD]->(p4),
+	(b1)-[:HAVE]->(p5), 
+	(b1)-[:HAVE]->(p6),
+	(b2)-[:HAVE]->(p7),
+	(b1)-[:HAVE]->(p8), 
+	(b2)-[:HAVE]->(p9),
+	(b1)-[:HAVE]->(p10),
+	(b5)-[:HAVE]->(p11), 
+	(b3)-[:HAVE]->(p12),
+	(b4)-[:HAVE]->(p13),
+	(b2)-[:HAVE]->(p14), 
+	(b1)-[:HAVE]->(p15),
+	(b3)-[:HAVE]->(p16),
+	(b5)-[:HAVE]->(p17), 
+	(b4)-[:HAVE]->(p18),
+	(b4)-[:SOLD]->(p8)
+
+CREATE (o1)-[:SOLD]->(p1), 
+	(o2)-[:HAVE]->(p2),
+	(o3)-[:HAVE]->(p3), 
+	(o4)-[:HAVE]->(p4),
+	(o1)-[:HAVE]->(p5), 
+	(o5)-[:HAVE]->(p6),
+	(o2)-[:HAVE]->(p7),
+	(o5)-[:HAVE]->(p2),
+	(o1)-[:SOLD]->(p8), 
+	(o2)-[:HAVE]->(p9),
+	(o3)-[:HAVE]->(p10), 
+	(o4)-[:HAVE]->(p11),
+	(o1)-[:HAVE]->(p12), 
+	(o5)-[:HAVE]->(p13),
+	(o2)-[:HAVE]->(p14),
+	(o5)-[:HAVE]->(p15),
+	(o1)-[:SOLD]->(p16), 
+	(o2)-[:HAVE]->(p17),
+	(o3)-[:HAVE]->(p18), 
+	(o4)-[:HAVE]->(p1)
+
+##############################	
+##############################
+Product attribute filtering	
+1) 특정 조건을 만족하는 product, 담당 broker 찾기 (0)
+
+MATCH (product:Product)<-[:HAVE]-(broker:Broker)
+WHERE product.size> 30
+RETURN DISTINCT product.address , broker
+
+1-2) 특정 지명 들어간 product 찾기
+MATCH (product:Product)
+WHERE product.address CONTAINS 'jongro'
+RETURN DISTINCT product{.*}
+
+##############################
+##############################
+ 특정 product에 관심있는 소비자수 확인 / broker 관점, owner 관점 둘다 가능 
+
+2) owner, broker 관점. 잘나가는 상품 찾기 
+MATCH (consumer:Consumer)-[:INTERESTED_IN]->(product:Product)
+WITH product, count(consumer) AS nrOfConsumers
+RETURN product{.address, nrOfConsumers}
+
+####################################
+######################## ###########
+fraud detection 
+
+3) consumer - product 이중계약
+MATCH (consumer:Consumer)-[:CONTRACTED]->(product:Product)
+WITH product, count(consumer) AS nrOfConsumers
+RETURN DISTINCT product{.address, nrOfConsumers}
+
+3-2) broker, owner 이중계약- 특정 건물 주인 2명 이상
+MATCH (owner:Owner)-[:HAVE]->(product:Product)
+WITH product, count(owner) AS nrOfOwners
+RETURN DISTINCT product{.address, nrOfOwners}
+
+3-3) broker- product, 특정건물 몇 명의 중개인과
+MATCH (broker:Broker)-[:HAVE]->(product:Product)
+WITH product, count(broker) AS nrOfBrokers
+RETURN DISTINCT product{.address, nrOfBrokers}
+
+#####################################
+####################################
+ 변경 정보 업데이트 - 방 계약완료 시 
+
+consumer-product :"CONTRACTED"/ product-broker:"SOLD" / product-owner:"SOLD"
+
+4)
+WITH c1,c2,c3,c4,c5,c6,c7,p1,p2,p3,p4,p5,p6,p7,b1,b2,b3,b4,b5,o1,o2,o3,o4,o5
+MATCH (broker:Broker)-[r:HAVE]->(product:Product)
+WHERE product.address = 'Seoul, jongro 125-1'
+CREATE (broker)-[r2:SOLD]->(product)
+SET r2=r
+WITH r
+DELETE r
+
+
+
+##relationship can't be changed, so make new relationship and delete old one
+MATCH (broker:Broker)--(:Product{address:"Seoul, jongro 125-1"}) RETURN DISTINCT broker.name
+
+4-2)
+CREATE c=(:Consumer{name:'Newbi', age: 24,email:'newbi@gmail.com', area_interest: 'Seoul, gangnam'})-[:INTERESTED_IN]->(:Product{address:'Seoul, gangnam 5 district'})
+RETURN c
+
+WITH c1,c2,c3,c4,c5,c6,c7,p1,p2,p3,p4,p5,p6,p7,b1,b2,b3,b4,b5,o1,o2,o3,o4,o5
+MATCH (broker:Broker)-[r:HAVE]->(product:Product)
+WHERE product.address = 'Seoul, jongro 125-1'
+CREATE (broker)-[r2:SOLD]->(product)
+SET r2=r
+WITH r
+DELETE r
+
+
