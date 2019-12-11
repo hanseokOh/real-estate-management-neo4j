@@ -15,7 +15,8 @@ You can see the overall project description in [desc/real_estate_DB_using_neo4j.
 1. [install neo4j ](https://neo4j.com/download-center/)
 
 2. make project 
-![screnen](/img/make_project.png)
+
+!<img src ="/img/make_project.PNG" width= "70%" height="50%" title= "" alt ="img/make_project.PNG"></img>
 
 3. input 'CYPHER_Code.txt' (just before two lines of #)
 
